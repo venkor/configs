@@ -1,0 +1,31 @@
+https://forums.fedoraforum.org/showthread.php?309229-How-to-have-the-Logitech-TrackMan-Marble-trakball-scroll
+
+
+I have this same Logitech Trackman Marble. I used the following configuration in F23 and am 
+actually using the same in F24. I create a file, e. g. 50-marblemouse.conf in 
+/etc/X11/xorg.conf and put a file with the following content in it:
+
+Code:
+Section "InputClass"
+        Identifier  "Marble Mouse"
+        MatchProduct "Logitech USB Trackball"
+        MatchIsPointer "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "evdev"
+        Option "ButtonMapping" "1 2 3 4 5 6 7 8 9"
+        Option "EmulateWheel" "true"
+        Option "EmulateWheelButton" "8"
+        Option "ZAxisMapping" "4 5"
+        Option "XAxisMapping" "6 7"
+        Option "Emulate3Buttons" "true"
+        Option "EmulateWheelInertia" "10"            # Factory default: 50
+EndSection
+This configuration enables scrolling with the big red ball while the left small button is 
+pressed. The button usually has the browser-back function. If you press and release the button 
+quickly, it performs the back function. If you press and hold the button, you are able to 
+scroll horizontally and vertically.
+
+Thanks for this awesome solution CSchwangler!
+
+Used for Logitech Marble Mouse.
+Tested on Manjaro Linux.
