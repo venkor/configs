@@ -1,5 +1,6 @@
 #!/bin/bash
 
+bluetoothctl power on
 bluedio_mac=$(bluetoothctl devices | grep -i '3rd Gen' | cut -d ' ' -f2)
 
 if [ ! -z $bluedio_mac ]; then
