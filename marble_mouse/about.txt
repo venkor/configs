@@ -28,4 +28,4 @@ scroll horizontally and vertically.
 Thanks for this awesome solution CSchwangler!
 
 Used for Logitech Marble Mouse.
-Tested on Manjaro Linux.
+Tested on Manjaro Linux, Regolith Linux, MX Linux.
